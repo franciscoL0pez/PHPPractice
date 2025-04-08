@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\BackOffice\UserController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
 Route::get('/', function () {
     return view('app');
 });
@@ -17,6 +18,7 @@ Route::get('/register', function () {
 }
 )->name('register');
 
-Route::post('/login', [UserController::class, 'login'])->name('login.post');
+Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.post');
+Route::resource('messages', MessageController::class);
 
