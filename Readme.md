@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Proposed Solution
+## 📌 Project
 This project is a **web application** built using **Laravel** and **TailwindCSS**, focused on providing a simple user **registration and login** system, along with basic **CRUD operations** for managing user data.
 
 The solution implements server-side rendering through Blade templates and styling through TailwindCSS. The application connects to a **MySQL** database for storing and managing user information.
