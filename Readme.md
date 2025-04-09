@@ -1,8 +1,7 @@
 # 📌 Table of Contents
 1. [Project](#-proposed-solution)  
 2. [Prerequisites](#-prerequisites)  
-3. [Testing Guide](#-testing-guide)  
-4. [Local Deployment](#-local-deployment)
+3. [Local Deployment](#-local-deployment)
 
 ---
 
