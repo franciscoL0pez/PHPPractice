@@ -11,10 +11,6 @@ This project is a **web application** built using **Laravel** and **TailwindCSS*
 
 The solution implements server-side rendering through Blade templates and styling through TailwindCSS. The application connects to a **MySQL** database for storing and managing user information.
 
-Routing, validation, session management, and error handling are managed using Laravel’s built-in features. No Docker or external API tools like Postman were used, as all interactions are through web forms.
-
----
-
 ---
 
 ## 🔧 Prerequisites
@@ -55,5 +51,13 @@ Then, run the migrations to create the necessary tables:
 ```sh
 php artisan migrate
 ```
+
+## Local Deployment
+
+Start laragon and npm for vite:
+```sh
+npm run dev 💻
+```
+
 
 
