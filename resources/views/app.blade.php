@@ -11,7 +11,7 @@
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
     <!-- Styles / Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
 </head>
 
 <body class="bg-gray-100 flex flex-col min-h-screen">
@@ -22,7 +22,7 @@
         </div>
         <div class="space-x-4">
             <a href="{{route("login")}}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Login</a>
-            <a href="#" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Register</a>
+            <a href="{{route("register")}}" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Register</a>
         </div>
     </div>
 </nav>
@@ -33,7 +33,7 @@
 
 <footer class="bg-white shadow-md mt-8">
     <div class="max-w-7xl mx-auto px-4 py-4 text-center text-gray-500 text-sm">
-        © {{ date('Y') }} Mi App - Todos los derechos reservados.
+        © {{ date('Y') }} Login - fran
     </div>
 </footer>
 </body>
