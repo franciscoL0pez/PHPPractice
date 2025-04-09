@@ -51,11 +51,11 @@ Then, run the migrations to create the necessary tables:
 php artisan migrate
 ```
 
-## Local Deployment
+## 💻 Local Deployment
 
 Start laragon and npm for vite:
 ```sh
-npm run dev 💻
+npm run dev 
 ```
 
 
