@@ -42,6 +42,15 @@
 
         <!-- Botón de Registrarse -->
         <div>
+            @if ($errors ->any())
+                <div class="mb-4 text-red-600">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <button type="submit"
                     class="w-full py-2 px-4 bg-green-600 text-gray-700 font-semibold rounded-md hover:bg-green-700">
                 Registrarse
