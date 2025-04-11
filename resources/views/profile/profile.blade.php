@@ -81,8 +81,8 @@
 
     <!-- Botones -->
     <div class="buttons">
-        <a href="{{ route('profile.edit') }}">Editar Perfil</a>
-        <a href="{{ route('message') }}" class="back">Volver</a>
+        <a href="{{ route('profile.edit') }}">Edit</a>
+        <a href="{{ route('messages.index') }}" class="back">Back</a>
     </div>
 </div>
 

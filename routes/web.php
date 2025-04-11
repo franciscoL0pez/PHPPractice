@@ -27,6 +27,10 @@ Route::get('/profile/edit', function () {
     return view('profile.edit_profile');
 })->name('profile.edit');
 
+Route::get('/messages', function () {
+    return view('messages');
+})->name('messages.index');
+
 
 
 
@@ -34,6 +38,8 @@ Route::post('/app', [LoginController::class, 'logOut'])->name('logout');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/profile', [ProfileController::class, 'profile'])->name('profile');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+// message route
+Route::get('/messages', [MessageController::class])->name('messages.index');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.post');
 Route::resource('messages', MessageController::class);
 
