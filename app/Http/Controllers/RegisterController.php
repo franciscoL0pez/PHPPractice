@@ -13,8 +13,15 @@ class RegisterController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email|unique:users,email',  // unique! dont allow to register the same email
             'password' => 'required|string|min:6|confirmed',
+        ],
+        [
+            'name.required' => 'Name is required.',
+            'email.required' => 'Email is required.',
+            'email.unique' => 'Email already exists.',
+            'password.required' => 'The password is required.',
+            'password.confirmed' => 'The password confirmation does not match.',
         ]);
 
         $user = User::create([
@@ -26,5 +33,6 @@ class RegisterController extends Controller
 
         return redirect()->route('login')->with('success', 'Registration successful. You can now log in.');
     }
+
 
 }

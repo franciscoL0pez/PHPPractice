@@ -12,6 +12,13 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required|string|min:6',
+        ]
+
+        , [
+            'email.required' => 'The email is required.',
+            'email.email' => 'The email must be a valid email address.',
+            'password.required' => 'The password is required.',
+            'password.min' => 'The password must be at least 6 characters.',
         ]);
 
         if (Auth::attempt($credentials)) {
@@ -21,8 +28,15 @@ class LoginController extends Controller
 
         else {
             return back()->withErrors([
-                'email' => 'Las credenciales no son correctas.',
+                'email' => 'The credentials do not match.',
             ])->onlyInput('email');
         }
     }
+
+    public function logOut(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('/')->with('success', 'You have been logged out.');
+    }
+
 }

@@ -3,38 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    @vite(['resources/css/app.css']) <!-- Si estás usando Tailwind -->
+    @vite(['resources/css/app.css'])
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
-<div class="w-full max-w-xs p-6 bg-white rounded-lg shadow-lg">
-    <h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-100 to-blue-200">
+<div class="w-full max-w-md p-8 bg-white rounded-2xl shadow-2xl">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">¡Bienvenido!</h1>
 
-    <form method="POST" action="{{ route('login.post') }}" class="space-y-4">
+    <form method="POST" action="{{ route('login.post') }}" class="space-y-6">
         @csrf
 
         <!-- Email -->
-        <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <div class="flex flex-col">
+            <label for="email" class="text-sm font-semibold text-gray-700 mb-1">Email</label>
             <input type="email" name="email" id="email" required
-                   class="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                   class="rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition">
+            @error('email')
+            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
         </div>
 
         <!-- Password -->
-        <div>
-            <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+        <div class="flex flex-col">
+            <label for="password" class="text-sm font-semibold text-gray-700 mb-1">Password</label>
             <input type="password" name="password" id="password" required
-                   class="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                   class="rounded-lg border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition">
+            @error('password')
+            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
         </div>
 
-        <!-- Botones -->
-        <div class="flex flex-col gap-3 mt-6">
+        <!-- Botón de login -->
+        <div>
             <button type="submit"
-                    class="w-full py-2 bg-blue-600 text-gray-700 font-semibold rounded-md hover:bg-blue-700 transition">
+                    class="w-full py-3 rounded-lg bg-indigo-500 text-white font-bold hover:bg-indigo-600 transition duration-300">
                 Ingresar
             </button>
+        </div>
 
+        <!-- Divider -->
+        <div class="flex items-center justify-center my-4">
+            <span class="text-sm text-gray-500">¿No tienes una cuenta?</span>
+        </div>
+
+        <!-- Link de registro -->
+        <div>
             <a href="{{ route('register') }}"
-               class="w-full py-2 text-center bg-gray-200 text-gray-700 font-semibold rounded-md hover:bg-gray-300 transition">
+               class="w-full block text-center py-3 rounded-lg border border-indigo-500 text-indigo-500 font-bold hover:bg-indigo-50 transition duration-300">
                 Registrarse
             </a>
         </div>
@@ -42,3 +56,4 @@
 </div>
 </body>
 </html>
+
