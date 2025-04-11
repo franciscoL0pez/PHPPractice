@@ -32,4 +32,11 @@ class LoginController extends Controller
             ])->onlyInput('email');
         }
     }
+
+    public function logOut(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('/')->with('success', 'You have been logged out.');
+    }
+
 }
