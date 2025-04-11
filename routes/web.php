@@ -21,4 +21,5 @@ Route::get('/register', function () {
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.post');
 Route::resource('messages', MessageController::class);
+Route::post('/verify-email', [RegisterController::class, 'verifyEmail'])->name('verify-email.post');
 
