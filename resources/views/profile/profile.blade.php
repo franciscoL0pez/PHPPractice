@@ -13,18 +13,21 @@
             height: 100vh;
             margin: 0;
         }
+
         .profile-card {
             background: #fff;
             padding: 40px 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
             width: 350px;
             transition: transform 0.3s ease;
         }
+
         .profile-card:hover {
             transform: translateY(-5px);
         }
+
         .profile-card img {
             width: 140px;
             height: 140px;
@@ -33,22 +36,26 @@
             margin-bottom: 20px;
             border: 4px solid #4CAF50;
         }
+
         .profile-card h2 {
             margin: 10px 0 5px;
             font-size: 26px;
             color: #333;
         }
+
         .profile-card p {
             margin: 5px 0;
             color: #666;
             font-size: 16px;
         }
+
         .buttons {
             margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 15px;
         }
+
         .buttons a {
             text-decoration: none;
             padding: 10px 20px;
@@ -58,12 +65,15 @@
             color: #fff;
             transition: background-color 0.3s ease;
         }
+
         .buttons a:hover {
             background-color: #45a049;
         }
+
         .buttons .back {
             background-color: #2196F3;
         }
+
         .buttons .back:hover {
             background-color: #1e88e5;
         }
@@ -72,14 +82,15 @@
 <body>
 
 <div class="profile-card">
-    <!-- Foto de perfil -->
-    <img src="{{ $user->photo_url ?? 'https://via.placeholder.com/120' }}" alt="Foto de perfil">
 
-    <!-- Información del usuario -->
+    <img
+        src="{{ $user->photo_url ?? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg6yzmHjVzH0-VqAWx6I1MshbEL_Nqau0JKw&s' }}"
+        alt="Foto de perfil">
+
+
     <h2>{{ $user->name ?? 'Fran' }} {{ $user->lastname ?? 'López' }}</h2>
     <p><strong>Email:</strong> {{ $user->email ?? 'test@example.com' }}</p>
 
-    <!-- Botones -->
     <div class="buttons">
         <a href="{{ route('profile.edit') }}">Edit</a>
         <a href="{{ route('messages.index') }}" class="back">Back</a>
