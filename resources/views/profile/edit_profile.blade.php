@@ -87,8 +87,7 @@
         @method('PUT')
 
         <input type="text" name="name" value="{{ old('name', $user->name) }}" placeholder="Name" required>
-        <input type="text" name="lastname" value="{{ old('lastname', $user->lastname) }}" placeholder="Last name"
-               required>
+
         <input type="email" name="email" value="{{ old('email', $user->email) }}" placeholder="Email" required>
 
         <div class="buttons">

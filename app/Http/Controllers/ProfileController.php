@@ -36,7 +36,7 @@ class ProfileController extends Controller
 
         $user->update($request->only('name', 'email'));
 
-        return redirect()->route('profile.show')->with('success', 'Perfil actualizado correctamente.');
+        return redirect()->route('profile')->with('success', 'Perfil actualizado correctamente.');
     }
 
 
