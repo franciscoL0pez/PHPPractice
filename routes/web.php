@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BackOffice\UserController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -16,14 +17,23 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
     return view('register');
-}
+})->name('register');
+
+Route::get('/profile', function () {
+    return view('profile.profile');
+})->name('profile');
+
+Route::get('/profile/edit', function () {
+    return view('profile.edit_profile');
+})->name('profile.edit');
 
 
-)->name('register');
+
 
 Route::post('/app', [LoginController::class, 'logOut'])->name('logout');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+Route::post('/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.post');
 Route::resource('messages', MessageController::class);
-Route::post('/verify-email', [RegisterController::class, 'verifyEmail'])->name('verify-email.post');
 

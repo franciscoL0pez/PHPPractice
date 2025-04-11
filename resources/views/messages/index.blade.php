@@ -5,14 +5,19 @@
     <title>Mensajes</title>
     @vite(['resources/css/app.css']) <!-- Asegurate que Tailwind esté cargando -->
 </head>
-<body class="min-h-screen bg-gray-100 flex flex-col items-center p-8">
+<body class="min-h-screen bg-gray-100 flex flex-col items-center p-16">
 
-<div class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
+<div class="relative w-full max-w-lg bg-white p-20 rounded-lg shadow-md">
     <h1 class="text-2xl font-bold mb-6 text-center text-gray-700">Message</h1>
 
     <a href="{{ route('app') }}"
        class="absolute top-4 right-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-all duration-300">
         Log out
+    </a>
+
+    <a href="{{ route('profile') }}"
+       class="absolute top-4 left-4 bg-white hover:bg-blue-700 text-dark font-semibold py-2 px-4 rounded-lg shadow-md transition-all duration-300">
+        Profile
     </a>
 
     <!-- Formulario de Nuevo Mensaje -->
