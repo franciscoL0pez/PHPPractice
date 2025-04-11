@@ -36,7 +36,7 @@ Route::get('/messages', function () {
 
 Route::post('/app', [LoginController::class, 'logOut'])->name('logout');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
-Route::post('/profile', [ProfileController::class, 'profile'])->name('profile');
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 Route::get('/messages', [MessageController::class])->name('messages.index');

@@ -18,7 +18,7 @@ class ProfileController extends Controller
         return view('profile.profile', compact('user'));
     }
 
-    public function edit()
+    public function edit():View
     {
         $user = Auth::user();
         return view('profile.edit_profile', compact('user'));
@@ -31,7 +31,6 @@ class ProfileController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,' . $user->id,
         ]);
 
